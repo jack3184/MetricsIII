@@ -1,26 +1,68 @@
-%% problem_set.tex
-
 \documentclass[10pt]{article}
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{geometry}
+\usepackage{cancel}
+\usepackage{enumitem}
+\geometry{hmargin=3.5cm,vmargin=3.5cm}
 
-\usepackage{amsfonts} % For \mathbb command
-\usepackage{fullpage} % normal margins
-\usepackage{amsmath} % for align
-\usepackage{sectsty} % for custom section font size
+%\sectionfont{\fontsize{12}{15}\selectfont}
 
-\sectionfont{\fontsize{12}{15}\selectfont}
-
-\title{Problem Set}
-\author{Authors}
+\title{Econometrics III - Problem Set 1}
+\author{Attila Gyetvai \\
+Jackson Bunting \\
+Leonardo S S Chaves \\
+Peter Horvarth \\
+Department of Economics - Duke University}
 \date{\today}
 
 \begin{document}
 
 \maketitle
 
+%--------------------------------------------------------------------------%
+\section*{Question 1}
 
-%% 1
-\section{ }
+\paragraph{}
 
-\paragraph{1.1}
+
+%--------------------------------------------------------------------------%
+\section*{Question 3}
+
+\paragraph{}Let $\{X_i\}_{i \in \mathbb{N}}$ be a sequence of random variables with mean $\mu$. Suppose that $\Cov(X_t,X_s)=0 \forall t\neq s$ and $\Var(X_t) \leq Kt^{1/2}$ for some constant $K>0$. Show that $\bar{X_t} \overset{\mathbb{P}}{\rightarrow} \mu$.\\
+
+\textbf{Solution:} Consider any $\epsilon>0$. Using Markov inequality we get
+\begin{align*}
+P(|\bar{X_t} - \mu| > \epsilon) &\leq \frac{\mathbb{E}( |\bar{X_t} - \mu|^2)}{\epsilon^2} = \frac{V(\bar{X_t})}{\epsilon^2} \\
+&\leq \frac{\sum_{t=1}^T V(X_t)}{T^2 \epsilon^2} = \frac{K \sum_{t=1}^T t^{1/2}}{T^2 \epsilon^2} \\
+&\leq \frac{K T^{3/2}}{T^2 \epsilon^2} \overset{t \to \infty}{\rightarrow} 0
+\end{align*}
+
+Then $\bar{X_t} - \mu \overset{\mathbb{P}}{\rightarrow} 0$ which is equivalent to what we wanted to show.
+
+
+%--------------------------------------------------------------------------%
+\section*{Question 5}
+
+\paragraph{}Suppose that $\sup_{t \in \mathcal{T}} \mathbb{E}(|X_t|^{1+\delta}) < \infty$ for some $\delta >0$. Then $\{X_t : t \in \mathcal{T}\}$ is uniformly integrable. (Hint: Markov's inequality) \\
+
+\textbf{Solution:}
+
+
+
+%--------------------------------------------------------------------------%
+\section*{Question 11}
+
+\paragraph{}Interpret and prove that $e^{o_p(1)} -1 = o_p(1)$ and $(O_p(1))^{\sqrt{2}} = O_p(1)$. \\
+
+\textbf{Solution:}
+
 
 \end{document}

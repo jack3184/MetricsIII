@@ -62,7 +62,10 @@ Then $\bar{X_t} - \mu \overset{\mathbb{P}}{\rightarrow} 0$ which is equivalent t
 
 \paragraph{}Interpret and prove that $e^{o_p(1)} -1 = o_p(1)$ and $(O_p(1))^{\sqrt{2}} = O_p(1)$. \\
 
-\textbf{Solution:}
+\textbf{Solution:} If you pick a r.v. $X = o_p(1)$, then a continuous transformation will also be $o_p(1)$. The proof is a straightforward consequence of CMT.
+
+For the second claim, the interpretation is that you preserve $O_p(1)$ property when you take a continuous function of this r.v.. To prove, let $X_n = O_p(1)$. By definition, $\exists M>0 ; \sup_{n \in \mathbb{N}} P(|X_n|>M)<\epsilon)$. Notice that $\{\omega \in \Omega : |X_n(\omega)|>M\} = \{\omega \in \Omega : |X_n(\omega)|^{\sqrt{2}}>M^{\sqrt{2}}\}$ because it is a monotonic transformation. Thus, $\exists \eta = M^{\sqrt{2}}>0 ; \sup_{n \in \mathbb{N}} P(|X_n^{\sqrt{2}}|>\eta)<\epsilon)$.
+
 
 
 \end{document}

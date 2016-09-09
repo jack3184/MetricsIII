@@ -32,19 +32,26 @@
 \begin{document}
 
 \maketitle
+%1
+\begin{problem}
+Verify taht the uniform metric defined as $d (f, g) = \sup\limits_{t \in \mathbb{T}} |f(t) - g(t)|, \:  f, g \in l^{\infty}(\mathbb{T})$ is indeed a metric. \\
 
+\textbf{Solution:} Let $f(t), g(t), h(t) \in l^{\infty}(\mathbb{T})$. We will show that the uniform metric satisfies the definition of a metric. That is, 
+\begin{enumerate}
+	\item  $\sup\limits_{t \in \mathbb{T}} |f(t) - g(t)| = 0$ if and only if $f(t) = g(t)$ since $|\cdot| \geq 0$ and $|a| = 0$ if and only if $a = 0$
+	\item  $|f(t) - g(t)| = |g(t) - f(t)|$, therefore $\sup\limits_{t \in \mathbb{T}} |f(t) - g(t)| = \sup\limits_{t \in \mathbb{T}} |g(t) - f(t)|$
+	\item $|f(t) - g(t)| = |f(t) - h(t) + h(t) - g(t)| \leq |f(t) - h(t)| +  |h(t) - g(t)|$ by triangle inequality. Therefore, $\sup\limits_{t \in \mathbb{T}} |f(t) - g(t)| \leq  \sup\limits_{t \in \mathbb{T}} |f(t) - h(t)| + \sup\limits_{t \in \mathbb{T}} |h(t) - g(t)|$
+\end{enumerate}
+\end{problem}
+
+\bigskip
+%2
 \begin{problem}
 
 \end{problem}
 
 \bigskip
-
-\begin{problem}
-
-\end{problem}
-
-\bigskip
-
+%3
 \begin{problem}
 Let $\{X_i\}_{i \in \mathbb{N}}$ be a sequence of random variables with mean $\mu$. Suppose that $Cov(X_t,X_s)=0 \forall t\neq s$ and $Var(X_t) \leq Kt^{1/2}$ for some constant $K>0$. Show that $\bar{X_t} \overset{\mathbb{P}}{\rightarrow} \mu$.\\
 
@@ -59,13 +66,13 @@ Then $\bar{X_t} - \mu \overset{\mathbb{P}}{\rightarrow} 0$ which is equivalent t
 \end{problem}
 
 \bigskip
-
+%4
 \begin{problem}
 
 \end{problem}
 
 \bigskip
-
+%5
 \begin{problem}
 Suppose that $\sup_{t \in \mathcal{T}} \mathbb{E}(|X_t|^{1+\delta}) < \infty$ for some $\delta >0$. Then $\{X_t : t \in \mathcal{T}\}$ is uniformly integrable. (Hint: Markov's inequality) \\
 
@@ -83,30 +90,59 @@ All of it implies that $\lim_{M \to \infty} \sup_{t \in \mathcal{T}} \mathbb{E}(
 
 \bigskip
 
+%6
 \begin{problem}
 
 \end{problem}
 
 \bigskip
 
-\begin{problem}
+%7
+\begin{problem} (Characteristic Function) Let $X_n$ and $X$ be $\mathbb{R}^d$-valued random variables. Suppose that $X_n \Rightarrow X$. Show that for any $\theta \in \mathbb{R}^d$, we have the following:
+	(a) $\mathbb{E}\left[\cos(\theta' X_n)\right] \rightarrow \mathbb{E}[\cos(\theta' X)]$
+	(b) $\mathbb{E}[\sin(\theta' X_n)] \rightarrow \mathbb{E}[\sin(\theta' X)]$;
+	(c) the characteristic function of $X_n$ converges to the characteristic function of $X$. \\
+	
+\textbf{Solution:} 
+
+(a) 	$f(x) = \cos(x)$ is a continuous bounded function on $\mathbb{R}$. Invoking the definition of weak convergence, we get that $\mathbb{E}\left[\cos(\theta' X_n)\right] \rightarrow \mathbb{E}[\cos(\theta' X)]$ since $X_n \Rightarrow X$. \\
+	
+(b) 	$f(x) = \sin(x)$ is a continuous bounded function on $\mathbb{R}$. Invoking the definition of weak convergence, we get that $\mathbb{E}[\sin(\theta' X_n)] \rightarrow \mathbb{E}[\sin(\theta' X)]$ since $X_n \Rightarrow X$. \\
+
+(c) The characteristic function of $Y$ random variable is $\phi_{Y}(t) = \mathbb{E}\left[\exp(itY)\right] = \mathbb{E}(\cos(tY) + i \sin(tY))$. From (a) and (b), it follows that  $\phi_{X_n}(t) =  \mathbb{E}(\cos(tX_n) + i \sin(tX_n)) = \mathbb{E}(\cos(tX_n)) + i \mathbb{E}(\sin(tX_n)) \rightarrow \mathbb{E}(\cos(tX)) + i \mathbb{E}(\sin(tX)) = \phi_{X}(t).$
 
 \end{problem}
 
 \bigskip
 
-\begin{problem}
+%8
+\begin{problem}(Laplace Transform) Let $X_n$ and $X$ be $\mathbb{R}_{+}$-valued random variables. Suppose that $X_n \Rightarrow X$. Show that for any $\theta \geq 0$, we have $\mathbb{E}(\exp(-\theta X_n)) \rightarrow \mathbb{E}(\exp(-\theta X))$ \\
+	
+\textbf{Solution:} 
+
+$f(x) = \exp(-\theta x)$ is a bounded continuous function on $\mathbb{R}_{+}$ if $\theta \geq 0$. Therefore, we can use the definition of weak convergence to get $\mathbb{E}(\exp(-\theta X_n)) \rightarrow \mathbb{E}(\exp(-\theta X))$ as   $X_n \Rightarrow X$.
 
 \end{problem}
 
 \bigskip
 
-\begin{problem}
+%9
+\begin{problem} Let $X_n$ and $X$ be real-valued random variables with $X_n \xrightarrow{a.s.} X.$ Let $r \in \mathbb{R}$ with $\mathbb{P}(X = r) = 0$. Show that 
+	(a) $1_{X_n \leq r} \xrightarrow{a.s.} 1_{X \leq r}$;
+	(b) $\mathbb{P}(X_n \leq r) \rightarrow \mathbb{P}(X \leq r)$. (Hint: bounded convergence theorem).
+	Show (b) but assume $X_n \Rightarrow X$ instead of $X_n \xrightarrow{a.s.} X.$ (Hint: Almost sure representation) \\
+	
+\textbf{Solution:}	
 
+	(a) $f(x) = 1_{x \leq r}$ is only discontinuous at r, otherwise it is continuous on the real line. However, $\mathbb{P}(X = r) = 0$, therefore we can apply continuous mapping theorem. That is, if $X_n \xrightarrow{a.s.} X$, then $f(X_n) \xrightarrow{a.s.} f(X)$ for $f(x) = 1_{x \leq r}$. \\
+	
+	(b) From (a), we know that $1_{X_n \leq r} \xrightarrow{a.s.} 1_{X \leq r}$ and $|1_{X_n \leq r}| \leq Y = 2$ for every $n \in \mathbb{N}$ (i.e. $Y$ is some integrable variable). So we can invoke dominated convergence theorem to get that $\mathbb{P}(X_n \leq r) = \mathbb{E}\left[1_{X_n \leq r}\right] \xrightarrow{a.s.} \mathbb{E}\left[1_{X \leq r}\right] = \mathbb{P}(X \leq r)$. \\ 
+	
+	(c) Since $X_n \Rightarrow X$, by almost sure representation, $\exists \left( (\tilde{X}_n)_{n \in \mathbb{N}} \text{ and } \tilde{X} \right)$, such that $X_n \sim \tilde{X}_n, X \sim \tilde{X}$ and $\tilde{X}_n \xrightarrow{a.s.} \tilde{X}.$ From (a) and (b), we know that for $\tilde{X}_n$ and $\tilde{X}$, that $\mathbb{P}(\tilde{X}_n \leq r) \rightarrow \mathbb{P}(\tilde{X} \leq r)$. Since $X_n \sim \tilde{X}_n, X \sim \tilde{X}$, we have that $\mathbb{P}(\tilde{X}_n \leq r) = \mathbb{P}(X_n \leq r)$ and $\mathbb{P}(\tilde{X} \leq r) = \mathbb{P}(X \leq r)$.
 \end{problem}
 
 \bigskip
-
+%10
 \begin{problem}
 Let $a_n = o_p(1)$.
 Interpret and prove that $O_p(a_n) = o_p(1)$. \\
@@ -122,7 +158,7 @@ The second line comes from the $o_p$--$O_p$ identities in the notes.
 \end{problem}
 
 \bigskip
-
+%11
 \begin{problem}
 Interpret and prove that $e^{o_p(1)} -1 = o_p(1)$ and $(O_p(1))^{\sqrt{2}} = O_p(1)$. \\
 
@@ -132,7 +168,7 @@ For the second claim, the interpretation is that you preserve $O_p(1)$ property 
 \end{problem}
 
 \bigskip
-
+%12
 \begin{problem}
 Let $f(x) = \exp (x^2)$.
 Let $(X_i)_{1 \leq i \leq n}$ be iid $N(\mu,1)$ variables.
@@ -158,6 +194,7 @@ As $\mu$ increases (especially after $\mu \geq 0.4$), the distribution gets clos
 
 \bigskip
 
+%13
 \begin{problem}
 
 \end{problem}

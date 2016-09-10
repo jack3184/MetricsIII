@@ -34,7 +34,7 @@
 \maketitle
 %1
 \begin{problem}
-Verify taht the uniform metric defined as $d (f, g) = \sup\limits_{t \in \mathbb{T}} |f(t) - g(t)|, \:  f, g \in l^{\infty}(\mathbb{T})$ is indeed a metric. \\
+Verify that the uniform metric defined as $d (f, g) = \sup\limits_{t \in \mathbb{T}} |f(t) - g(t)|, \:  f, g \in l^{\infty}(\mathbb{T})$ is indeed a metric. \\
 
 \textbf{Solution:} Let $f(t), g(t), h(t) \in l^{\infty}(\mathbb{T})$. We will show that the uniform metric satisfies the definition of a metric. That is, 
 \begin{enumerate}
@@ -173,7 +173,7 @@ For the second claim, the interpretation is that you preserve $O_p(1)$ property 
 Let $f(x) = \exp (x^2)$.
 Let $(X_i)_{1 \leq i \leq n}$ be iid $N(\mu,1)$ variables.
 Simulate such a sequence with $n = 100$ and $\mu = 0.3$.
-Compute $f (\bar{X})$ where $\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i$.
+Compute $f (\bar{X}_n)$ where $\bar{X}_n = \frac{1}{n} \sum_{i=1}^n X_i$.
 Repeat this for 2000 times. Plot the distribution of $f (\bar{X})$ in the simulation.
 What is the asymptotic distribution of $f (\bar{X})$?
 Is the asymptotic distribution a good approximation to the empirical distribution?
@@ -181,9 +181,18 @@ Repeat for $\mu =$ 0, 0.1, 0.2, 0.3, 0.4, 0.5.
 Discuss the results. \\
 
 \textbf{Solution:}
-We plot the simulated empirical distributions below.
-For $\mu = 0$, the distribution is skewed to the right, resembling the $\chi^2$-distribution.
-As $\mu$ increases (especially after $\mu \geq 0.4$), the distribution gets closer and closer to normal.
+We calculate the asymptotic distribution of $f(\bar{X}_n)$ using CLT and the delta method.
+Since $X_i \sim N(\mu, 1)$, it follows from the CLT that $\sqrt{n} (\bar{X}_n - \mu) \Rightarrow N (0, 1)$.
+By the delta method, $\sqrt{n} (\exp(\bar{X}_n^2) - \exp(\mu^2)) \Rightarrow N (0, (2 \mu \exp(\mu^2))^2)$.
+When $\mu = 0.3$, $\sqrt{n} (\exp(\bar{X}_n^2) - \exp(0.3^2)) \Rightarrow N (0, 0.43)$.
+
+However, note that when $\mu = 0$, the asymptotic distribution becomes degenerate in which case we use a version of the delta method that relies on a second-order Taylor expansion:
+$\sqrt{n} (\exp(\bar{X}_n^2) - \exp(\mu^2)) \Rightarrow \frac{1}{2} \cdot 2 \exp(\mu^2) (2\mu^2 + 1) \cdot \chi^2(1)$.
+Hence in the case of $\mu = 0$, $\sqrt{n} (\exp(\bar{X}_n^2)) \Rightarrow \chi^2(1)$.
+
+We plot the simulated distributions below.
+As the above analysis suggests, the empirical distribution with $\mu = 0$ resembles the $\chi^2$-distribution.
+As $\mu$ increases, the empirical distributions look more and more normal.
 
 \begin{figure}[H]
   \centering

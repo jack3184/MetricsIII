@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.8.23)  9 SEP 2016 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.8.23)  9 SEP 2016 20:07
 entering extended mode
 **"C:/Users/Attila/OneDrive - Duke University/university/Duke/2016.4-F/metrics-
 3/MetricsIII/pset_template_Attila.tex"
@@ -1482,6 +1482,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--182
 
  []
 
+[3]
 Package epstopdf Info: Source file: <prob12.eps>
 (epstopdf)                    date: 2016-09-07 23:16:59
 (epstopdf)                    size: 110179 bytes
@@ -1490,24 +1491,24 @@ Package epstopdf Info: Source file: <prob12.eps>
 (epstopdf)                    size: 7739 bytes
 (epstopdf)             Command: <epstopdf --outfile=prob12-eps-converted-to.pdf
  prob12.eps>
-(epstopdf)             \includegraphics on input line 191.
+(epstopdf)             \includegraphics on input line 200.
 Package epstopdf Info: Output file is already uptodate.
-<prob12-eps-converted-to.pdf, id=41, 421.575pt x 316.18124pt>
+ <prob12-eps-converted-to.pdf, id=49, 421.575pt x 316.18124pt>
 File: prob12-eps-converted-to.pdf Graphic file (type pdf)
 
 <use prob12-eps-converted-to.pdf>
-Package pdftex.def Info: prob12-eps-converted-to.pdf used on input line 191.
+Package pdftex.def Info: prob12-eps-converted-to.pdf used on input line 200.
 (pdftex.def)             Requested size: 252.94695pt x 189.7102pt.
- [3] [4 <./prob12-eps-converted-to.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 203.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 203.
+ [4 <./prob12-eps-converted-to.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 212.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 212.
 
 (pset_template_Attila.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 203.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 203.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 212.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 212.
 Package rerunfilecheck Info: File `pset_template_Attila.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 203.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 212.
  ) 
 Here is how much of TeX's memory you used:
  29841 strings out of 493334
@@ -1532,7 +1533,7 @@ les/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
 /lmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on pset_template_Attila.pdf (4 pages, 228983 bytes).
+Output written on pset_template_Attila.pdf (4 pages, 230294 bytes).
 PDF statistics:
  118 PDF objects out of 1000 (max. 8388607)
  22 named destinations out of 1000 (max. 500000)

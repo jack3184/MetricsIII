@@ -92,7 +92,21 @@ The inequalities above give that $X_t$ is uniformly integrable.
 
 %6
 \begin{problem}
+Suppose that $|X_t| \leq Y$ for some integrable random variable $Y$ and all $t \in \mathbb{T}$.
+Then $\{ X_t: t \in \mathbb{T} \}$ is uniformly integrable. \\
 
+\textbf{Solution:} 
+
+\begin{align*}
+	|X_t| &\leq Y \\
+	\implies |X_t| 1_{\{ |X_t| \geq M \}} &\leq Y 1_{\{ Y \geq M \}} \\
+	\implies \mathbb{E} \left[ |X_t| 1_{\{ |X_t| \geq M \}} \right] &\leq \mathbb{E} \left[ Y 1_{\{ Y \geq M \}} \right] \\
+	\implies \sup_{t \in \mathbb{T}} \mathbb{E} \left[ |X_t| 1_{\{ |X_t| \geq M \}} \right] &\leq \sup_{t \in \mathbb{T}} \mathbb{E} \left[ Y 1_{\{ Y \geq M \}} \right] = \mathbb{E} \left[ Y 1_{\{ Y \geq M \}} \right] \\
+	\implies \lim_{M \to \infty} \sup_{t \in \mathbb{T}} \mathbb{E} \left[ |X_t| 1_{\{ |X_t| \geq M \}} \right] &\leq \underbrace{\lim_{M \to \infty} \mathbb{E} \left[ Y 1_{\{ Y \geq M \}} \right]}_{= 0 \text{ as $Y$ is integrable}} \\
+	\implies \lim_{M \to \infty} \sup_{t \in \mathbb{T}} \mathbb{E} \left[ |X_t| 1_{\{ |X_t| \geq M \}} \right] &= 0
+	\intertext{The second line follows from the fact that the indicator function is stricly increasing.
+	The third line follows from the fact that expectation is strictly increasing.}
+\end{align*}
 \end{problem}
 
 \bigskip
@@ -144,17 +158,17 @@ $f(x) = \exp(-\theta x)$ is a bounded continuous function on $\mathbb{R}_{+}$ if
 \bigskip
 %10
 \begin{problem}
-Let $a_n = o_p(1)$.
+Let $a_n = o(1)$.
 Interpret and prove that $O_p(a_n) = o_p(1)$. \\
 
-\textbf{Solution:} If I divide $X_n$ by $a_n = o_p(1)$, it has to be the case that $X_n  = o_p(1)$.
-The proof is as it follows:
+\textbf{Solution:} If I divide $X_n$ by $a_n = o(1)$, it has to be the case that $X_n  = o_p(1)$.
+The proof is the following:
 \begin{align*}
   X_n &= O_p (a_n) \iff \frac{X_n}{a_n} = O_p(1); \\
-  X_n &= \frac{X_n}{a_n} \, a_n = O_p(1) \, o_p(1) = o_p(1)
+  X_n &= \frac{X_n}{a_n} \, a_n = O_p(1) \, o(1) \implies O_p(1) o_p(1) = o_p(1)
 \end{align*}
 The first line is just the definition of $O_p(a_n)$.
-The second line comes from the $o_p$--$O_p$ identities in the notes.
+The second line comes from the fact that pointwise convergence implies convergence in probability, and the $o_p$--$O_p$ identities in the notes.
 \end{problem}
 
 \bigskip

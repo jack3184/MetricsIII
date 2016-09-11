@@ -77,16 +77,15 @@ Then $\bar{X_t} - \mu \overset{\mathbb{P}}{\rightarrow} 0$ which is equivalent t
 \begin{problem}
 Suppose that $\sup_{t \in \mathcal{T}} \mathbb{E}(|X_t|^{1+\delta}) < \infty$ for some $\delta >0$. Then $\{X_t : t \in \mathcal{T}\}$ is uniformly integrable. (Hint: Markov's inequality) \\
 
-\textbf{Solution:} Notice that $\sup_{t \in \mathcal{T}} \mathbb{E}(|X_t|I_{[|X_t|>M]}) \leq \sup_{t \in \mathcal{T}} \mathbb{E}(|X_t|) \sup_{t \in \mathcal{T}}P(X_t >M)$.
+\textbf{Solution:} Notice that $\frac{|X_t|}{M} \geq I[|X_t|>M] \implies \frac{|X_t|^{\delta}}{M^{\delta}} \geq I[|X_t|>M]$. 
 
-From Markov inequality we have
+Using that $|X_t|\geq 0$,
 \begin{align*}
-P(|X_t|>M)&\leq \frac{\mathbb{E}(|X_t|^{1+\delta})}{M^{1+\delta}} \\
-&< \frac{\eta}{M^2} \overset{M \to \infty}{\longrightarrow} 0
+&\frac{|X_t|^{1+\delta}}{M^{\delta}}\geq |X_t| I[|X_t|>M] \forall \ t \in \mathcal{T}\\
+&\implies \sup_{t \in \mathcal{T}} \mathbb{E}(|X_t|^{1+\delta}) (1/M^{\delta}) \geq \sup_{t \in \mathcal{T}} \mathbb{E}(|X_t|I[|X_t|>M]) \forall \ M \in \mathbb{N} \\
+&\implies \lim_{M \to \infty} \sup_{t \in \mathcal{T}} \mathbb{E}(|X_t|^{1+\delta}) (1/M^{\delta}) = 0 \geq \lim_{M \to \infty} \sup_{t \in \mathcal{T}} \mathbb{E}(|X_t|I[|X_t|>M]) \geq 0
 \end{align*}
-Moreover, assuming $\sup_{t \in \mathcal{T}} \mathbb{E}(|X_t|^{1+\delta}) < \infty$ implies that $\sup_{t \in \mathcal{T}} \mathbb{E}(|X_t|)<\infty$.
-
-All of it implies that $\lim_{M \to \infty} \sup_{t \in \mathcal{T}} \mathbb{E}(|X_t| I_{[X_t| > M]}) \leq 0$. Since $|X_t| I_{[X_t| > M]}\geq 0$, we get the uniform integrability of $\{X_t : t \in \mathcal{T}\}$.
+The inequalities above give that $X_t$ is uniformly integrable.
 \end{problem}
 
 \bigskip
@@ -206,7 +205,26 @@ As $\mu$ increases, the empirical distributions look more and more normal.
 
 %13
 \begin{problem}
+Let $(X_i)_{i \in \mathbb{N}}$ be a sequence of iid random variables with mean $\mu$ and variance $\sigma^2$. Suppose that for some $\delta>0$, $\mathbb{E}\left[|X_i|^{2+\delta}\right]<\infty$. Use Lindeberg's CLT to show that $n^{1/2}(\frac{1}{n}\sum_{i=1}^{n} X_i - \mu) \implies N(0,\sigma^2)$.
 
+\textbf{Solution:}
+Initially consider $X_{n,i} = \frac{X_i - \mu}{\sqrt{n}}$. Now, we need to verify the assumptions of Lindeberg's CLT.
+\begin{enumerate}
+\item $\{X_{n,i}\}$ independent, real-valued, and zero mean. \\
+Since we are applying a continuous function to rv's which are iid by assumption, independence will be preserved. Moreover, considering $X_i:\Omega \mapsto \mathbb{R}$, we will have $X_{n,i}$ real-valued. And notice that $\mathbb{E}[X_{n,i}] = \mathbb{E}[(X_i - \mu)/\sqrt{n}] = 0$.\\ 
+\item $\sum_{i=1}^n V(X_{n,i} = \frac{\sum_{i=1}^n \sigma^2}{n} = \sigma^2$
+\item $\lim_{n \to \infty} \sum_{i=1}^n \mathbb{E}[X_{n,i}^2 I[|X_{n,i}|>\epsilon]] =0$\\
+Using an argument similar to Q5, we have $\frac{|X_{n,i}|^{2+\delta}}{\epsilon^{\delta}} \geq I[|X_{n,i}|>\epsilon]$. Therefore,
+\begin{center}
+$\frac{\mathbb{E}(|X_i - \mu|^{2+\delta}}{\epsilon^{\delta} n^{1+\delta/2}}) \geq \mathbb{E}(|X_{n,i}|^2 I[|X_{n,i}>\epsilon]) \forall \ i \in \mathbb{N}$
+\end{center}
+Using iid assumption and $\mathbb{E}\left[|X_i|^{2+\delta}\right]<\infty$ we have:
+\begin{align*}
+&\frac{\mathbb{E}(|X_i-\mu|^{2+\delta})}{\epsilon^{\delta}n^{\delta/2}}\geq \sum_{i=1}^n \mathbb{E}(|X_{n,i}|^2 I[|X_{n,i}>\epsilon])\\
+&\implies \lim_{n \to \infty} \frac{\mathbb{E}(|X_i-\mu|^{2+\delta})}{\epsilon^{\delta}n^{\delta/2}} =0 \geq \lim_{n \to \infty} \sum_{i=1}^n \mathbb{E}(|X_{n,i}|^2 I[|X_{n,i}>\epsilon]) \geq 0
+\end{align*}
+\end{enumerate}
+Finally, we can apply Lindeberg's CLT to get $n^{1/2}(\frac{1}{n}\sum_{i=1}^{n} X_i - \mu) = \sum_{i=1}^n X_{n,i} \implies N(0,\sigma^2)$.
 \end{problem}
 
 

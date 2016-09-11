@@ -1,26 +1,20 @@
 \documentclass[11pt,letterpaper]{article}                  % Define document class
 
-%! Mandatory packages
-\usepackage[utf8]{inputenc}                                %! Character encoding
-\usepackage[T1]{fontenc}                                   %! Font encoding
-\usepackage[english]{babel}                                %! Language setting
-\usepackage{epstopdf}
+\usepackage{amsfonts} % For \mathbb command
+\usepackage[top=1in, bottom=1.25in, left=1in, right=1in]{geometry}
+\usepackage{amsmath} % for align
+\usepackage{mathtools} % for lVert
+\usepackage{graphicx} % for charts
 
-% Set path
-\newcommand{\path}{Preamble}
+\allowdisplaybreaks % so that aligned equations can be broken across pages
 
-% Text packages
-\input{"\path/packText.tex"}
-\setlength\parindent{0pt}                                  % No indentation for the whole document
-
-% Figure/table packages
-\input{"\path/packFigure.tex"}
-
-% Math packages
-\input{"\path/packMath.tex"}
-
-% Graphics packages
-\input{"\path/packGraph.tex"}
+%% Convenient math abbreviations
+\newcommand*\diff{\mathop{}\!d} % nicely formatted integral dx
+\newcommand{\E}{\mathrm{E}} % Expectation operator
+\newcommand{\Var}{\mathrm{Var}} % Variance operator
+\newcommand{\Cov}{\mathrm{Cov}} % Covariance operator
+\newtheorem{problem}{Problem}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert} % For Euclidean norm
 
 
 % Title
